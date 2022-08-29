@@ -1,22 +1,32 @@
 body {
     
-    background-color: aqua;
-    display:flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    
+    background: linear-gradient(#71b7e6,#9b59b6);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+      }
+
+.container
+{
+    max-width: 700px;
+    width:100%;
+    background-color: aliceblue;
+    border-radius: 3px;
+   
 }
 
-.Contact-wrapper
+.container form .Contact-wrapper
 {
     display:flex;
-    margin-top: 2rem;
-    flex-direction:column;
-    height: 25px; 
-    width:200px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
     
-    }
-    
+form .Contact-wrapper
+{
+    width: calc(100% / 2 - 20px);
+}
     
 button 
 {
