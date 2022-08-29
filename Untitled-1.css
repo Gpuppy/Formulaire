@@ -1,0 +1,21 @@
+body {
+    
+    background-color: aqua;
+    display:flex;
+    height: 25px; 
+    width:200px;
+}
+
+.Formulaire 
+{
+    display:flex;
+    justify-content:row;
+    flex-direction:column;
+    
+    }
+    
+    
+button 
+{
+    background-color:blue;
+}
