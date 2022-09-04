@@ -16,7 +16,7 @@ body {
    
 }
 
-.container form .Contact-wrapper
+.container form .form-control
 {
     display:flex;
     flex-wrap: wrap;
@@ -24,19 +24,19 @@ body {
     margin:20px 0 12px 0;
 }
     
-form .Contact-wrapper .input-box
+form .form-control .input-box
 {
     width: calc(100% / 2 - 20px);
 }
 
-.Contact-wrapper .input-box 
+.form-control .input-box 
 {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
     
 }
-.Contact-wrapper .input-box input
+.form-control .input-box input
 {
     height:45px;
     width:90%;
