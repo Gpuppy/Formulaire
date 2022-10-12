@@ -1,4 +1,5 @@
         
+        let form = document.getElementById("form");
         let firstName = document.getElementById("txtFirstName");
         let lastName = document.getElementById("txtLastName");
         let email = document.getElementById("txtEmail");
@@ -6,75 +7,86 @@
         let address = document.getElementById("txtAddress");
         let town = document.getElementById("txtTown");
         let postCode = document.getElementById("txtPostCode");
-        let form = document.querySelector("form");
+        let errorElement = document.getElementById("error");
+            
+        form.addEventListener('submit',(e) => {
+            e.preventDefault();
+
+            checkInputs();
+        });
+
+        function checkInputs() {
+           // trim to remove the whitespaces
+            let firstNameValue = firstName.value.trim();
+            let lastNameValue = lastName.value.trim();
+            let emailValue = email.value.trim();
+            let phoneValue = phone.value.trim();
+            let addressValue = address.value.trim(); 
+            let townValue = town.value.trim();
+            let postCodeValue = postCode.value.trim(); 
 
             
-        function validateInput(){
-            console.log("validate input");
-        }
-       
-        if(firstName.value.trim()===""){
-            onError(firstName, "User Name cannot be empty") ;
+        
+                
+        if(firstNameValue === "" || firstNameValue == null){
+            onError(firstName, "First Name cannot be empty") ;
         }else{
             onSuccess(firstName);
         }
 
-        if(lastName.value.trim()===""){
+        if(lastNameValue === ""){
             onError(lastName, "Last Name cannot be empty") ;
         }else{
             onSuccess(lastName);
         }
 
-        if(email.value.trim()===""){
+        if(emailValue === ""){
             onError(email, "Email is not valid") ;
         }else{
             onSuccess(email);
         }
 
-        if(phone.value.trim()===""){
+        if(phoneValue === ""){
             onError(phone, "Phone Number not valid") ;
         }else{
             onSuccess(phone);
         }
 
-        if(address.value.trim()===""){
+        if(addressValue === ""){
             onError(address, "address cannot be empty") ;
         }else{
             onSuccess(address);
         }
 
-        if(town.value.trim()===""){
+        if(townValue === ""){
             onError(town, "town cannot be empty") ;
         }else{
             onSuccess(town);
         }
+        
+        if(postCodeValue === ""){
+            onError(postCode, "postcode cannot be empty") ;
+        }else{
+            onSuccess(postCode);
+        }
+ 
 
-
-        document.querySelector("button")
-        .addEventListener("submit",()=>{
-            Event.preventDefault();
-            validateInput();
-        });
-
+        }
         function onSuccess(input){
-            let parent=input.parentElement;
-            let messageEle=parent.querySelector("small");
-            messageEle.style.visibility="hidden";
-            parent.classList.remove("error");
-            parent.classList.add("success");
+           const formControl = input.parentElement;
+           formControl.className = 'form-control success';
+           
         }
 
-        function onError(input){
-            let parent=input.parentElement;
-            let messageEle=parent.querySelector("small");
-            messageEle.style.visibility="visible";
-            messageEle.innerText="message";
-            parent.classList.add("error");
-            parent.classList.remove("success");
+        function onError(input, txt){
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('.small');
+            console.log(small)
+            small.innerText= txt;
+            
         }
 
-        function isValidEmail(email){
-            return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-         }
-         
-         
+        
+        /*function isEmail(email) {
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        }*/

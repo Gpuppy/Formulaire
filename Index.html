@@ -9,34 +9,43 @@
 </head>
 <body>
 
+  
 <div class="container">
-<div class="title"><h1>Javascript Form</h1></div>
-  <form class="form">
-  <div class="form-control">
-    
+  <div id="error"></div>
+  <div class="title"><h1>Javascript Form</h1></div>
+ <form class="form" id="form">
+  <div class ="form-control">
+   
+
+      
 <div class="input-box">
-<label for="firstname">First Name</label>
+<label for="firstname">FirstName</label>
 <input type="text" id="txtFirstName" name="firstname" >
+<div class="small"></div>
 </div>
-    
+   
 <div class="input-box">
 <label for="lastname">LastName</label>
-<input type="text" id="txtSurName" name="Surname" >
+<input type="text" id="txtLastName" name="Surname" >
+<div class="small"></div>
 </div>
    
 <div class="input-box">
 <label for="email">E-mail:</label>
 <input type="email" id="txtEmail" name="mail">
+<div class="small"></div>
 </div>
 
 <div class="input-box">
 <label for="phone">Téléphone</label>
 <input type="tel" id="txtPhone" name="phone">
+<div class="small"></div>
 </div>
 
 <div class="input-box">
-<label for="Address">Adress</label>
+<label for="Address">Address</label>
 <input type="Address" id="txtAddress">
+<div class="small"></div>
 </div>
 
 <div class="input-box">
@@ -45,26 +54,26 @@
           <option value="Paris">Paris</option>
           <option value="St Etienne">St Etienne</option>
           <option value="Lille">Lille</option>
-  </select>
-</div>
+            </select>
+            <div class="small"></div>
+            </div>
 
   <div class="input-box">
   <label for="postCode">Code postal</label>
   <input type="postCode" id="txtPostCode">
-</div>
+  <div class="small"></div>
+  </div>
 
   <div class="input-box">
   <label for="checkbox">J'accepte les conditions</label>
   <input type="checkbox" id="checkbox" name="checkbox">
-  </div>
+  <div class="small"></div>
+    </div>
 
-  <div class="button">
-<input type="submit" value="Valider">
-  </div>
-  
+  <button type="submit">Submit</button>
+   
 
-</div>
-</form>
+  </form>
 </div>
 
 
